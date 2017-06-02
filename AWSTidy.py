@@ -74,7 +74,7 @@ def lambda_handler(event, context):
         x = 0
 
         for candidate in candidate_volumes:
-            OrphanedVolumes = OrphanedVolumes + "- " str(candidate)
+            OrphanedVolumes = OrphanedVolumes + "- " +str(candidate)
             x = x + 1
 
         if x == 0:
@@ -113,7 +113,7 @@ def lambda_handler(event, context):
             created_date = datetime.strptime(
                 image.creation_date, "%Y-%m-%dT%H:%M:%S.000Z")
             if created_date < two_weeks_ago:
-                OldImages = OldImages + "- " str(image)
+                OldImages = OldImages + "- " +str(image)
                 x = x + 1
 
         if x == 0:
